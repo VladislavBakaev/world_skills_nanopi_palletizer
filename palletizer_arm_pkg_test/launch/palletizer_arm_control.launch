@@ -1,0 +1,13 @@
+<launch>
+		<include file="$(find arm_controll)/launch/arms.launch">
+			<arg name="manip_name" value="palletizer"/>
+		</include>
+	
+		<node pkg = "palletizer_arm_pkg_test" type = "send_joint_states.py" name = "send_joint_states" output = "screen"/>
+
+		<node name="convert_and_publish" pkg="palletizer_arm_pkg_test" type = "publish_joint_states_vel_acc.py" output = "screen"/>
+		<node name="main_to_point_node" pkg="palletizer_arm_pkg_test" type ="main_to_point_node.py" output = "screen"/>
+		<node name = "udp2ros_pal" pkg = "udp_pkg_test" type = "udp2ros_pal.py" output = "screen"/>
+
+</launch>
+

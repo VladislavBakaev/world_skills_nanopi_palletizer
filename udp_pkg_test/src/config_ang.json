@@ -1,0 +1,7 @@
+{
+	"input_port": 9090,
+	"output_port": 9090,
+	"server_address": "192.168.0.208",
+	"height_cap": 50,
+	"height_cap_before": 120
+}
